@@ -1,0 +1,161 @@
+[
+  {
+    "Former Profession":"Corporate Executive",
+    "Starting Supplies":100,
+    "Score Multiplier":1.0,
+    "Skills":[
+      "Persuasion",
+      "Trade"
+    ],
+    "Notes":"Used charm and authority to survive early chaos."
+  },
+  {
+    "Former Profession":"Surgeon",
+    "Starting Supplies":90,
+    "Score Multiplier":1.1,
+    "Skills":[
+      "Medical",
+      "Anatomy"
+    ],
+    "Notes":"Knows how to treat wounds and infections."
+  },
+  {
+    "Former Profession":"Engineer",
+    "Starting Supplies":80,
+    "Score Multiplier":1.2,
+    "Skills":[
+      "Mechanics",
+      "Repair"
+    ],
+    "Notes":"Can fix vehicles and craft tools."
+  },
+  {
+    "Former Profession":"Survival Instructor",
+    "Starting Supplies":70,
+    "Score Multiplier":1.4,
+    "Skills":[
+      "Wilderness",
+      "Tracking"
+    ],
+    "Notes":"Proficient in foraging and avoiding danger."
+  },
+  {
+    "Former Profession":"Firefighter",
+    "Starting Supplies":65,
+    "Score Multiplier":1.5,
+    "Skills":[
+      "Strength",
+      "Emergency Response"
+    ],
+    "Notes":"Quick to act under pressure. Good stamina."
+  },
+  {
+    "Former Profession":"Hunter",
+    "Starting Supplies":60,
+    "Score Multiplier":1.6,
+    "Skills":[
+      "Marksmanship",
+      "Stealth"
+    ],
+    "Notes":"Expert with weapons and hunting game."
+  },
+  {
+    "Former Profession":"Mechanic",
+    "Starting Supplies":55,
+    "Score Multiplier":1.7,
+    "Skills":[
+      "Repair",
+      "Vehicles"
+    ],
+    "Notes":"Keeps old tech running. Handy in a convoy."
+  },
+  {
+    "Former Profession":"Botanist",
+    "Starting Supplies":50,
+    "Score Multiplier":1.8,
+    "Skills":[
+      "Herbalism",
+      "Foraging"
+    ],
+    "Notes":"Identifies edible plants and makes poultices."
+  },
+  {
+    "Former Profession":"Teacher",
+    "Starting Supplies":45,
+    "Score Multiplier":1.9,
+    "Skills":[
+      "Literacy",
+      "Morale"
+    ],
+    "Notes":"Keeps companions sane. Can decipher old texts."
+  },
+  {
+    "Former Profession":"Drifter",
+    "Starting Supplies":40,
+    "Score Multiplier":2.0,
+    "Skills":[
+      "Street Smarts",
+      "Barter"
+    ],
+    "Notes":"Has seen it all. Knows how to get by."
+  },
+  {
+    "Former Profession":"Ex-Convict",
+    "Starting Supplies":35,
+    "Score Multiplier":2.2,
+    "Skills":[
+      "Intimidation",
+      "Improvisation"
+    ],
+    "Notes":"Dangerous edge. Less trusted by strangers."
+  },
+  {
+    "Former Profession":"Cult Survivor",
+    "Starting Supplies":30,
+    "Score Multiplier":2.4,
+    "Skills":[
+      "Insight",
+      "Survival Instinct"
+    ],
+    "Notes":"Scarred but spiritually resilient."
+  },
+  {
+    "Former Profession":"War Veteran",
+    "Starting Supplies":25,
+    "Score Multiplier":2.6,
+    "Skills":[
+      "Combat",
+      "Tactical Awareness"
+    ],
+    "Notes":"Haunted, but skilled with violence."
+  },
+  {
+    "Former Profession":"Street Kid",
+    "Starting Supplies":20,
+    "Score Multiplier":2.8,
+    "Skills":[
+      "Sneak",
+      "Scavenge"
+    ],
+    "Notes":"Quick and quiet. Ideal for risky missions."
+  },
+  {
+    "Former Profession":"Starving Artist",
+    "Starting Supplies":15,
+    "Score Multiplier":3.0,
+    "Skills":[
+      "Expression",
+      "Empathy"
+    ],
+    "Notes":"Keeps morale up. Good at reading people."
+  },
+  {
+    "Former Profession":"Amnesiac",
+    "Starting Supplies":10,
+    "Score Multiplier":3.5,
+    "Skills":[
+      "??"
+    ],
+    "Notes":"Unknown past. Starts weak, ends strong."
+  }
+]

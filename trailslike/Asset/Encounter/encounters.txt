@@ -1,0 +1,17 @@
+[
+
+  {
+    "event_name": "Bridge Collapse",
+    "event_id": "event_001",
+    "image_ids": ["bridge_fall_1"],
+    "sound_id": "",
+    "sound_description": ""
+  },
+  {
+    "event_name": "Abandoned Vehicle",
+    "event_id": "event_002",
+    "image_ids": ["car_ruin_in_fog"],
+    "sound_id": "",
+    "sound_description": ""
+  }
+]

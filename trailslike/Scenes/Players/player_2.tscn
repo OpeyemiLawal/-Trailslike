@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwguqnhtogkq0"]
+
+[ext_resource type="PackedScene" uid="uid://c3y3l70s3qxd0" path="res://Scenes/Players/player_1.tscn" id="1_uutah"]
+[ext_resource type="Texture2D" uid="uid://c0ibpp21lbobf" path="res://Asset/People/bald_man-no-bg.png" id="2_xpkvv"]
+[ext_resource type="Texture2D" uid="uid://4ofqsi00q2k0" path="res://Asset/People/bald_man.png" id="3_mfntb"]
+
+[node name="Player1" instance=ExtResource("1_uutah")]
+
+[node name="ArmyMan-no-bg" parent="." index="0"]
+texture = ExtResource("2_xpkvv")
+
+[node name="ArmyMan" parent="ConversationUI/Conversation/Layer1" index="1"]
+position = Vector2(117, 201.5)
+scale = Vector2(0.103516, 0.296329)
+texture = ExtResource("3_mfntb")
+
+[node name="Conversation" parent="ConversationUI/Conversation/Conversation1" index="0"]
+text = "Hello, Friend. Are you also preparing to set out the
+trial for the new land"
+
+[node name="Yes" type="Button" parent="ConversationUI/Conversation/Conversation1" index="2"]
+modulate = Color(0.968627, 0.901961, 0.72549, 1)
+layout_mode = 0
+offset_left = 280.0
+offset_top = 151.0
+offset_right = 480.0
+offset_bottom = 182.0
+scale = Vector2(1.5, 1.3)
+text = "Yes i am"
+
+[connection signal="pressed" from="ConversationUI/Conversation/Conversation1/Yes" to="." method="_on_advice_pressed"]

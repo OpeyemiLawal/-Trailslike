@@ -1,0 +1,16 @@
+characters = [
+    {"name": "The Bard", "id": "bard", "image_filename": "bard.png"},
+    {"name": "The Boy", "id": "boy", "image_filename": "boy.png"},
+    {"name": "The Elder", "id": "elder", "image_filename": "elder.png"},
+    {"name": "Injured Man", "id": "injured_man", "image_filename": "injured_man.png"},
+    {"name": "The Nurse", "id": "nurse", "image_filename": "nurse.png"},
+    {"name": "The Preacher", "id": "preacher", "image_filename": "preacher.png"},
+    {"name": "Ragged Man", "id": "ragged_man", "image_filename": "ragged_man.png"},
+    {"name": "The Sheriff", "id": "sheriff", "image_filename": "sherrif.png"},
+    {"name": "Soldier Woman", "id": "soldier_woman", "image_filename": "soldier_woman.png"},
+    {"name": "Tarped Man", "id": "tarp_man", "image_filename": "tarp_man.png"},
+    {"name": "Snow Woman", "id": "snow_woman", "image_filename": "snow_woman.png"},
+    {"name": "Pensive Woman", "id": "pensive_woman", "image_filename": "pensive_woman.png"},
+    {"name": "Bald Man", "id": "bald_man", "image_filename": "bald_man.png"},
+    {"name": "Army Man", "id": "army_man", "image_filename": "army_man.png"}
+]

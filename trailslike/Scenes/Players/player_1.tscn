@@ -1,0 +1,164 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3y3l70s3qxd0"]
+
+[ext_resource type="Script" path="res://Scripts/Player/player_1.gd" id="1_6b75w"]
+[ext_resource type="Texture2D" uid="uid://dmxaoy4upqvs8" path="res://Asset/People/army_man-no-bg.png" id="1_i8jit"]
+[ext_resource type="Texture2D" uid="uid://bcwobmt7cx87n" path="res://Asset/People/army_man.png" id="3_43ht7"]
+[ext_resource type="FontFile" uid="uid://qa4nvvmd0bqq" path="res://Asset/Fonts/Oswald-Medium.ttf" id="4_fs6xr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w0x2t"]
+size = Vector2(87, 95)
+
+[node name="Player1" type="Area2D"]
+script = ExtResource("1_6b75w")
+
+[node name="ArmyMan-no-bg" type="Sprite2D" parent="."]
+scale = Vector2(0.181009, 0.256757)
+texture = ExtResource("1_i8jit")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(58.5, 47.5)
+shape = SubResource("RectangleShape2D_w0x2t")
+
+[node name="ConversationUI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Conversation" type="Control" parent="ConversationUI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 203.0
+offset_top = 151.0
+offset_right = -307.0
+offset_bottom = -115.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Layer1" type="Control" parent="ConversationUI/Conversation"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="ColorRect" parent="ConversationUI/Conversation/Layer1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.968627, 0.901961, 0.72549, 1)
+
+[node name="ArmyMan" type="Sprite2D" parent="ConversationUI/Conversation/Layer1"]
+position = Vector2(117.75, 196.25)
+scale = Vector2(0.125889, 0.352211)
+texture = ExtResource("3_43ht7")
+
+[node name="Bar" type="ColorRect" parent="ConversationUI/Conversation/Layer1"]
+layout_mode = 0
+offset_right = 642.0
+offset_bottom = 22.0
+color = Color(0.639216, 0.784314, 0.956863, 1)
+
+[node name="Label" type="Label" parent="ConversationUI/Conversation/Layer1"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.5
+offset_top = -6.0
+offset_right = 50.5
+offset_bottom = 24.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_fs6xr")
+theme_override_font_sizes/font_size = 20
+text = "Conversation"
+
+[node name="Conversation1" type="Control" parent="ConversationUI/Conversation"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Conversation" type="Label" parent="ConversationUI/Conversation/Conversation1"]
+layout_mode = 0
+offset_left = 237.0
+offset_top = 51.0
+offset_right = 636.0
+offset_bottom = 81.0
+scale = Vector2(0.96, 1.08)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_fs6xr")
+theme_override_font_sizes/font_size = 20
+text = "I traveled out of the oregon country three years ago.
+Liked it a lot, so I decided to come back east, round
+up some of my relatives, and take them all back to
+oregon with me!"
+
+[node name="Advice" type="Button" parent="ConversationUI/Conversation/Conversation1"]
+modulate = Color(0.968627, 0.901961, 0.72549, 1)
+layout_mode = 0
+offset_left = 280.0
+offset_top = 212.0
+offset_right = 480.0
+offset_bottom = 243.0
+scale = Vector2(1.5, 1.3)
+text = "Do you have any advice?"
+
+[node name="Quit" type="Button" parent="ConversationUI/Conversation/Conversation1"]
+modulate = Color(0.968627, 0.901961, 0.72549, 1)
+layout_mode = 0
+offset_left = 280.0
+offset_top = 276.0
+offset_right = 480.0
+offset_bottom = 307.0
+scale = Vector2(1.5, 1.3)
+text = "So Long"
+
+[node name="Conversation2" type="Control" parent="ConversationUI/Conversation"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Conversation" type="Label" parent="ConversationUI/Conversation/Conversation2"]
+layout_mode = 0
+offset_left = 237.0
+offset_top = 51.0
+offset_right = 636.0
+offset_bottom = 81.0
+scale = Vector2(0.96, 1.08)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_fs6xr")
+theme_override_font_sizes/font_size = 20
+text = "Find Yourself a good wagon train. That's the prime 
+thing. Keep moving and dont take no cutoffs. Stick
+to the main trail and you'll be OK."
+
+[node name="Pardon" type="Button" parent="ConversationUI/Conversation/Conversation2"]
+modulate = Color(0.968627, 0.901961, 0.72549, 1)
+layout_mode = 0
+offset_left = 280.0
+offset_top = 212.0
+offset_right = 480.0
+offset_bottom = 243.0
+scale = Vector2(1.5, 1.3)
+text = "Pardon?"
+
+[node name="Quit" type="Button" parent="ConversationUI/Conversation/Conversation2"]
+modulate = Color(0.968627, 0.901961, 0.72549, 1)
+layout_mode = 0
+offset_left = 280.0
+offset_top = 276.0
+offset_right = 480.0
+offset_bottom = 307.0
+scale = Vector2(1.5, 1.3)
+text = "So Long"
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="pressed" from="ConversationUI/Conversation/Conversation1/Advice" to="." method="_on_advice_pressed"]
+[connection signal="pressed" from="ConversationUI/Conversation/Conversation1/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="ConversationUI/Conversation/Conversation2/Quit" to="." method="_on_quit_pressed"]

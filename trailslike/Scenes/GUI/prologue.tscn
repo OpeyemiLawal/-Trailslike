@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=3 uid="uid://r284xk2hgvh"]
+
+[ext_resource type="FontFile" uid="uid://b57ey3pchvkmf" path="res://Asset/Fonts/Righteous-Regular.ttf" id="1_280qo"]
+[ext_resource type="Script" path="res://Scripts/Scripts/prologue.gd" id="1_d43ue"]
+[ext_resource type="FontFile" uid="uid://bywjg8rn0lumq" path="res://Asset/Fonts/manrope-medium.otf" id="2_f00h6"]
+
+[node name="Prologue" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d43ue")
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.55895, 0.572782, 0.259479, 1)
+
+[node name="Header" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -120.0
+offset_top = -2.0
+offset_right = 117.0
+offset_bottom = 61.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_280qo")
+theme_override_font_sizes/font_size = 50
+text = "Prologue"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 45.0
+offset_top = 83.0
+offset_right = -27.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.403922, 0.403922, 0.403922, 0.647059)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 110.0
+offset_right = 6759.0
+offset_bottom = 422.0
+scale = Vector2(0.92, 1.44)
+theme_override_colors/font_color = Color(0.0901961, 0.0196078, 0.0196078, 1)
+theme_override_fonts/font = ExtResource("2_f00h6")
+theme_override_font_sizes/font_size = 30
+text = "You’re a blacksmith who has come to Independence in 1843 for the purpose 
+of setting off on a journey west to Oregon City. You’ve already bought a 
+large farmwagon, but you still need to buy the other supplies you’ll 
+need for your journey. As you wander the streets of Independence, you’ll 
+see various stores that should be able to provide you with supplies--
+provided you have enough cash. You’ll also see people who may be able 
+to give you some good advice."
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

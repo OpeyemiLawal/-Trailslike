@@ -1,0 +1,166 @@
+[gd_scene load_steps=5 format=3 uid="uid://canv6ew1yqw17"]
+
+[ext_resource type="Script" path="res://Scripts/Scripts/character_creation_screen.gd" id="1_6vblf"]
+[ext_resource type="FontFile" uid="uid://b57ey3pchvkmf" path="res://Asset/Fonts/Righteous-Regular.ttf" id="1_8cwf5"]
+[ext_resource type="FontFile" uid="uid://74nfutala84w" path="res://Asset/Fonts/Oswald-Regular.ttf" id="2_l1c6r"]
+[ext_resource type="FontFile" uid="uid://bywjg8rn0lumq" path="res://Asset/Fonts/manrope-medium.otf" id="4_i5o81"]
+
+[node name="Character Creation screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6vblf")
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.55895, 0.572782, 0.259479, 1)
+
+[node name="Header" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -116.5
+offset_right = 116.5
+offset_bottom = 63.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_8cwf5")
+theme_override_font_sizes/font_size = 50
+text = "Trails Like"
+
+[node name="Name section" type="Node" parent="."]
+
+[node name="NameInput" type="LineEdit" parent="Name section"]
+offset_left = 16.0
+offset_top = 119.0
+offset_right = 189.0
+offset_bottom = 190.0
+scale = Vector2(1.306, 1.35)
+placeholder_text = "Enter Your name"
+
+[node name="Label" type="Label" parent="Name section"]
+offset_left = 19.0
+offset_top = 65.0
+offset_right = 148.0
+offset_bottom = 95.0
+scale = Vector2(1.52, 1.68)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_l1c6r")
+theme_override_font_sizes/font_size = 20
+text = "A Trial Journey of "
+
+[node name="Date Section" type="Node" parent="."]
+
+[node name="Month" type="OptionButton" parent="Date Section"]
+offset_left = 297.0
+offset_top = 122.0
+offset_right = 470.0
+offset_bottom = 193.0
+scale = Vector2(1.3, 1.3)
+
+[node name="Year" type="OptionButton" parent="Date Section"]
+offset_left = 566.0
+offset_top = 122.0
+offset_right = 739.0
+offset_bottom = 193.0
+scale = Vector2(1.3, 1.3)
+
+[node name="Label" type="Label" parent="Date Section"]
+offset_left = 300.0
+offset_top = 58.0
+offset_right = 429.0
+offset_bottom = 88.0
+scale = Vector2(1.52, 1.68)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_l1c6r")
+theme_override_font_sizes/font_size = 20
+text = "Who set out in"
+
+[node name="Job Selection" type="Node" parent="."]
+
+[node name="job_dropdown" type="OptionButton" parent="Job Selection"]
+offset_left = 876.0
+offset_top = 122.0
+offset_right = 1049.0
+offset_bottom = 193.0
+scale = Vector2(1.3, 1.3)
+
+[node name="Label" type="Label" parent="Job Selection"]
+offset_left = 879.0
+offset_top = 58.0
+offset_right = 1008.0
+offset_bottom = 88.0
+scale = Vector2(1.52, 1.68)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_l1c6r")
+theme_override_font_sizes/font_size = 20
+text = "Profession"
+
+[node name="cash_label" type="Label" parent="Job Selection"]
+offset_left = 475.0
+offset_top = 573.0
+offset_right = 604.0
+offset_bottom = 603.0
+scale = Vector2(1.52, 1.68)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_l1c6r")
+theme_override_font_sizes/font_size = 20
+
+[node name="Accompanies" type="Node" parent="."]
+
+[node name="count_dropdown" type="OptionButton" parent="Accompanies"]
+modulate = Color(1.99743e-06, 0.501933, 0.108469, 1)
+offset_left = 205.0
+offset_top = 278.0
+offset_right = 355.0
+offset_bottom = 328.0
+
+[node name="Label" type="Label" parent="Accompanies"]
+offset_left = 14.0
+offset_top = 273.0
+offset_right = 143.0
+offset_bottom = 303.0
+scale = Vector2(1.52, 1.68)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_l1c6r")
+theme_override_font_sizes/font_size = 20
+text = "Accompanied by"
+
+[node name="Label2" type="Label" parent="Accompanies"]
+offset_left = 369.0
+offset_top = 272.0
+offset_right = 498.0
+offset_bottom = 302.0
+scale = Vector2(1.52, 1.68)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_l1c6r")
+theme_override_font_sizes/font_size = 20
+text = "Others"
+
+[node name="accompanyNameContainer" type="VBoxContainer" parent="Accompanies"]
+offset_left = 14.0
+offset_top = 333.0
+offset_right = 54.0
+offset_bottom = 373.0
+
+[node name="Start" type="Button" parent="."]
+offset_left = 13.0
+offset_top = 567.0
+offset_right = 178.0
+offset_bottom = 617.0
+scale = Vector2(1.3, 1.3)
+theme_override_fonts/font = ExtResource("4_i5o81")
+theme_override_font_sizes/font_size = 30
+disabled = true
+text = "New Game"
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]

@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://cl65vdjlw0fju"]
+
+[ext_resource type="Script" path="res://Scripts/City/city_1.gd" id="1_eaioi"]
+[ext_resource type="Texture2D" uid="uid://dpmjc0om3i4ms" path="res://Asset/Town/church_ruin.png" id="1_n6k4u"]
+[ext_resource type="PackedScene" uid="uid://c3y3l70s3qxd0" path="res://Scenes/Players/player_1.tscn" id="2_1msf8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_173cm"]
+size = Vector2(96, 662)
+
+[node name="City1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_eaioi")
+
+[node name="ChurchRuin" type="Sprite2D" parent="."]
+position = Vector2(578.5, 324)
+scale = Vector2(0.751953, 0.632813)
+texture = ExtResource("1_n6k4u")
+
+[node name="Players" type="Node2D" parent="."]
+
+[node name="Player1" parent="Players" instance=ExtResource("2_1msf8")]
+position = Vector2(15, 429)
+scale = Vector2(1.68997, 1.56357)
+
+[node name="ChangeCity" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChangeCity"]
+position = Vector2(1110, 321)
+shape = SubResource("RectangleShape2D_173cm")
+
+[connection signal="input_event" from="ChangeCity" to="." method="_on_change_city_input_event"]

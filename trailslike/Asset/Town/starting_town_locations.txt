@@ -1,0 +1,38 @@
+[
+  {
+    "id": "house_ruins",
+    "name": "Collapsed House",
+    "description": "The skeletal remains of a small home. Broken furniture, blackened walls, and forgotten memories.",
+    "NPCs": []
+  },
+  {
+    "id": "old_storefront",
+    "name": "Abandoned Storefront",
+    "description": "A looted convenience store with shattered windows and toppled shelves. The back room remains locked.",
+    "NPCs": ["Suspicious Scavenger"]
+  },
+  {
+    "id": "church_ruin",
+    "name": "Ruined Church",
+    "description": "The air is heavy and quiet. Sunlight filters through a crumbling stained-glass window. A small shrine remains intact.",
+    "NPCs": ["Muttering Cleric"]
+  },
+  {
+    "id": "town_square",
+    "name": "Town Square",
+    "description": "Once the heart of the town, now a desolate clearing with charred banners and scattered debris.",
+    "NPCs": ["Wounded Drifter", "Silent Child"]
+  },
+  {
+    "id": "municipal_office",
+    "name": "Old Municipal Office",
+    "description": "Filing cabinets torn open. Maps and papers litter the floor. A generator hums faintly in the basement.",
+    "NPCs": ["Archivist"]
+  },
+  {
+    "id": "gas_station",
+    "name": "Burned-Out Gas Station",
+    "description": "Charred pumps and a collapsed roof. The garage is intact, though partially buried in debris.",
+    "NPCs": ["Mechanic"]
+  }
+]
