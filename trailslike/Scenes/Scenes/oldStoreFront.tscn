@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsoicvfwa4lbw"]
+
+[ext_resource type="Texture2D" uid="uid://tll6ir7yg5bt" path="res://Asset/Town/old_storefront.png" id="1_aod1l"]
+[ext_resource type="Script" path="res://Scripts/old_store_front.gd" id="1_asf8x"]
+[ext_resource type="PackedScene" uid="uid://dii67hel2ee47" path="res://Scenes/Players/player_3.tscn" id="2_eiwgl"]
+[ext_resource type="Texture2D" uid="uid://dt4f5f3ixp1ea" path="res://Asset/back-arrow.png" id="3_0k1aq"]
+
+[node name="OldStoreFront" type="Node2D"]
+script = ExtResource("1_asf8x")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OldStorefront" type="Sprite2D" parent="."]
+position = Vector2(575.5, 316.5)
+scale = Vector2(0.763672, 0.651367)
+texture = ExtResource("1_aod1l")
+
+[node name="Area2D" parent="." instance=ExtResource("2_eiwgl")]
+position = Vector2(269, 104)
+scale = Vector2(4.86083, 3.76)
+
+[node name="Back" type="Button" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+icon = ExtResource("3_0k1aq")
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

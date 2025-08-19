@@ -34,7 +34,6 @@ func _ready() -> void:
 	# Initialize with first job
 	_on_job_selected(job_dropdown.selected)
 
-
 func _populate_months() -> void:
 	var months := [
 		"January", "February", "March", "April",
@@ -44,7 +43,6 @@ func _populate_months() -> void:
 	monthDropdown.clear()
 	for m in months:
 		monthDropdown.add_item(m)
-
 
 func _populate_years() -> void:
 	var years := [
@@ -60,17 +58,14 @@ func _populate_years() -> void:
 	for i in range(0, 6): # allows 0–5 accompanies
 		count_dropdown.add_item(str(i))
 
-
 func _populate_jobs() -> void:
 	job_dropdown.clear()
 	for j in jobs.keys():
 		job_dropdown.add_item(j)
 
-
 func _on_count_changed(index: int) -> void:
 	var num := int(count_dropdown.get_item_text(index))
 	_generate_name_fields(num)
-
 
 func _generate_name_fields(amount: int) -> void:
 	# Clear old fields
@@ -102,7 +97,6 @@ func _generate_name_fields(amount: int) -> void:
 
 		name_container.add_child(row)
 
-
 func _on_fields_changed(_new_text: String = "") -> void:
 	# Check main name
 	if nameInput.text.strip_edges() == "":
@@ -127,11 +121,14 @@ func _on_job_selected(index: int) -> void:
 
 
 func _process(delta: float) -> void:
-	if count_dropdown.selected == 0 and name_container.get_child_count() == 0:
-		# If no accompanies and name empty
-		if nameInput.text.strip_edges() == "":
-			start_button.disabled = true
-
+	if count_dropdown.selected == 0 :
+		start_button.disabled = true
 
 func _on_start_pressed() -> void:
+	GameState.player_name = nameInput.text
+	GameState.start_year = int(yearDropdown.get_item_text(yearDropdown.selected))
+	GameState.profession = job_dropdown.get_item_text(job_dropdown.selected)
+	GameState.cash = jobs[GameState.profession]
+
+
 	get_tree().change_scene_to_file("res://Scenes/GUI/prologue.tscn")

@@ -50,26 +50,19 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.403922, 0.403922, 0.403922, 0.647059)
 
-[node name="Label" type="Label" parent="."]
+[node name="PrologueText" type="Label" parent="."]
 layout_mode = 0
 offset_left = 84.0
 offset_top = 110.0
-offset_right = 6759.0
-offset_bottom = 422.0
+offset_right = 1155.0
+offset_bottom = 275.0
 scale = Vector2(0.92, 1.44)
 theme_override_colors/font_color = Color(0.0901961, 0.0196078, 0.0196078, 1)
 theme_override_fonts/font = ExtResource("2_f00h6")
 theme_override_font_sizes/font_size = 30
-text = "You’re a blacksmith who has come to Independence in 1843 for the purpose 
-of setting off on a journey west to Oregon City. You’ve already bought a 
-large farmwagon, but you still need to buy the other supplies you’ll 
-need for your journey. As you wander the streets of Independence, you’ll 
-see various stores that should be able to provide you with supplies--
-provided you have enough cash. You’ll also see people who may be able 
-to give you some good advice."
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 10.0
 one_shot = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

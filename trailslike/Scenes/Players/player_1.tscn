@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3y3l70s3qxd0"]
+[gd_scene load_steps=7 format=3 uid="uid://c3y3l70s3qxd0"]
 
 [ext_resource type="Script" path="res://Scripts/Player/player_1.gd" id="1_6b75w"]
 [ext_resource type="Texture2D" uid="uid://dmxaoy4upqvs8" path="res://Asset/People/army_man-no-bg.png" id="1_i8jit"]
+[ext_resource type="Texture2D" uid="uid://b3sar5e6tg3a7" path="res://Asset/cursor1.png" id="2_m7038"]
 [ext_resource type="Texture2D" uid="uid://bcwobmt7cx87n" path="res://Asset/People/army_man.png" id="3_43ht7"]
 [ext_resource type="FontFile" uid="uid://qa4nvvmd0bqq" path="res://Asset/Fonts/Oswald-Medium.ttf" id="4_fs6xr"]
 
@@ -10,6 +11,7 @@ size = Vector2(87, 95)
 
 [node name="Player1" type="Area2D"]
 script = ExtResource("1_6b75w")
+hover_cursor = ExtResource("2_m7038")
 
 [node name="ArmyMan-no-bg" type="Sprite2D" parent="."]
 scale = Vector2(0.181009, 0.256757)
@@ -159,6 +161,8 @@ scale = Vector2(1.5, 1.3)
 text = "So Long"
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="pressed" from="ConversationUI/Conversation/Conversation1/Advice" to="." method="_on_advice_pressed"]
 [connection signal="pressed" from="ConversationUI/Conversation/Conversation1/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="ConversationUI/Conversation/Conversation2/Quit" to="." method="_on_quit_pressed"]
