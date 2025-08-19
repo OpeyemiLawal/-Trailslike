@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://c3y3l70s3qxd0"]
 
-[ext_resource type="Script" path="res://Scripts/Player/player_1.gd" id="1_6b75w"]
+[ext_resource type="Script" uid="uid://b2omg4cl81eyh" path="res://Scripts/Player/player_1.gd" id="1_6b75w"]
 [ext_resource type="Texture2D" uid="uid://dmxaoy4upqvs8" path="res://Asset/People/army_man-no-bg.png" id="1_i8jit"]
 [ext_resource type="Texture2D" uid="uid://b3sar5e6tg3a7" path="res://Asset/cursor1.png" id="2_m7038"]
 [ext_resource type="Texture2D" uid="uid://bcwobmt7cx87n" path="res://Asset/People/army_man.png" id="3_43ht7"]

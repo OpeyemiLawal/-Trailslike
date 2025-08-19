@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dvj3ubllyso8c"]
 
-[ext_resource type="Script" path="res://Scripts/Scripts/menu.gd" id="1_ckjwd"]
+[ext_resource type="Script" uid="uid://cw8wjl567cxgv" path="res://Scripts/Scripts/menu.gd" id="1_ckjwd"]
 [ext_resource type="FontFile" uid="uid://b57ey3pchvkmf" path="res://Asset/Fonts/Righteous-Regular.ttf" id="1_p8oxy"]
 [ext_resource type="FontFile" uid="uid://bywjg8rn0lumq" path="res://Asset/Fonts/manrope-medium.otf" id="2_fd8tv"]
 

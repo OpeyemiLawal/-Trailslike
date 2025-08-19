@@ -12,8 +12,12 @@ config_version=5
 
 config/name="TrailsLike"
 run/main_scene="res://Scenes/GUI/menu.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameState="*res://Scripts/Global/GameState.gd"
 
 [display]
 

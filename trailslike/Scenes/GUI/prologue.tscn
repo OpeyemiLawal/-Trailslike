@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://r284xk2hgvh"]
 
 [ext_resource type="FontFile" uid="uid://b57ey3pchvkmf" path="res://Asset/Fonts/Righteous-Regular.ttf" id="1_280qo"]
-[ext_resource type="Script" path="res://Scripts/Scripts/prologue.gd" id="1_d43ue"]
+[ext_resource type="Script" uid="uid://bu8mpymx50oc" path="res://Scripts/Scripts/prologue.gd" id="1_d43ue"]
 [ext_resource type="FontFile" uid="uid://bywjg8rn0lumq" path="res://Asset/Fonts/manrope-medium.otf" id="2_f00h6"]
 
 [node name="Prologue" type="Control"]

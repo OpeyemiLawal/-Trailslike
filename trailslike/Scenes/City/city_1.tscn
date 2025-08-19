@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cl65vdjlw0fju"]
+[gd_scene load_steps=6 format=3 uid="uid://cl65vdjlw0fju"]
 
-[ext_resource type="Script" path="res://Scripts/City/city_1.gd" id="1_eaioi"]
+[ext_resource type="Script" uid="uid://cim0nolhiibt" path="res://Scripts/City/city_1.gd" id="1_eaioi"]
 [ext_resource type="Texture2D" uid="uid://dpmjc0om3i4ms" path="res://Asset/Town/church_ruin.png" id="1_n6k4u"]
 [ext_resource type="PackedScene" uid="uid://c3y3l70s3qxd0" path="res://Scenes/Players/player_1.tscn" id="2_1msf8"]
+[ext_resource type="Texture2D" uid="uid://bmnklythyq861" path="res://Asset/cursor2.png" id="2_obv8v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_173cm"]
 size = Vector2(96, 662)
@@ -16,6 +17,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_eaioi")
+hover_cursor = ExtResource("2_obv8v")
 
 [node name="ChurchRuin" type="Sprite2D" parent="."]
 position = Vector2(578.5, 324)
@@ -35,3 +37,5 @@ position = Vector2(1110, 321)
 shape = SubResource("RectangleShape2D_173cm")
 
 [connection signal="input_event" from="ChangeCity" to="." method="_on_change_city_input_event"]
+[connection signal="mouse_entered" from="ChangeCity" to="." method="_on_change_city_mouse_entered"]
+[connection signal="mouse_exited" from="ChangeCity" to="." method="_on_change_city_mouse_exited"]

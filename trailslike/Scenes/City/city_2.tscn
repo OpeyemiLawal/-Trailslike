@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bxghgkd3frxvc"]
 
-[ext_resource type="Script" path="res://Scripts/City/city_2.gd" id="1_dkhk4"]
+[ext_resource type="Script" uid="uid://b030rc3dyyfhf" path="res://Scripts/City/city_2.gd" id="1_dkhk4"]
 [ext_resource type="Texture2D" uid="uid://dmabswb266g3w" path="res://Asset/Town/gas_station.png" id="1_ix2cc"]
 [ext_resource type="Texture2D" uid="uid://bmnklythyq861" path="res://Asset/cursor2.png" id="2_4mg4m"]
 [ext_resource type="PackedScene" uid="uid://bwguqnhtogkq0" path="res://Scenes/Players/player_2.tscn" id="2_l6cu4"]

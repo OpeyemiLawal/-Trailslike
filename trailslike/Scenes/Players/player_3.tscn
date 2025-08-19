@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dii67hel2ee47"]
 
-[ext_resource type="Script" path="res://Scripts/Player/player_3.gd" id="1_1pdnu"]
+[ext_resource type="Script" uid="uid://bakaltvntm401" path="res://Scripts/Player/player_3.gd" id="1_1pdnu"]
 [ext_resource type="Texture2D" uid="uid://dto0x6i1xa51" path="res://Asset/People/boy-no-bg.png" id="1_eof8x"]
 [ext_resource type="Texture2D" uid="uid://b3sar5e6tg3a7" path="res://Asset/cursor1.png" id="2_1dpxh"]
 [ext_resource type="FontFile" uid="uid://qa4nvvmd0bqq" path="res://Asset/Fonts/Oswald-Medium.ttf" id="3_x18jq"]

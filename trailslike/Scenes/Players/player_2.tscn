@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bwguqnhtogkq0"]
 
-[ext_resource type="Script" path="res://Scripts/Player/player_2.gd" id="1_0wfli"]
+[ext_resource type="Script" uid="uid://rtis6dtsxt5p" path="res://Scripts/Player/player_2.gd" id="1_0wfli"]
 [ext_resource type="Texture2D" uid="uid://b3sar5e6tg3a7" path="res://Asset/cursor1.png" id="2_q7w4o"]
 [ext_resource type="Texture2D" uid="uid://c0ibpp21lbobf" path="res://Asset/People/bald_man-no-bg.png" id="2_xpkvv"]
 [ext_resource type="Texture2D" uid="uid://4ofqsi00q2k0" path="res://Asset/People/bald_man.png" id="3_mfntb"]
