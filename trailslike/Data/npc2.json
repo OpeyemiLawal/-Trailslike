@@ -1,0 +1,162 @@
+[
+  {
+	"name": "Blanket",
+	"prices": {
+	  "$": 16.0,
+	  "Apple": 2.0,
+	  "Bread": 10.0,
+	  "Cheese": 10.0,
+	  "Helmet": 12.0,
+	  "Map": 4.0,
+	  "Potion": 2.0,
+	  "Shield": 8.0,
+	  "Sword": 10.0,
+	  "Water Bottle": 12.0
+	},
+	"quantity": 5.0
+  },
+  {
+	"name": "Potion",
+	"prices": {
+	  "$": 20.0,
+	  "Apple": 6.0,
+	  "Blanket": 2.0,
+	  "Bread": 8.0,
+	  "Cheese": 10.0,
+	  "Helmet": 6.0,
+	  "Map": 6.0,
+	  "Shield": 12.0,
+	  "Sword": 4.0,
+	  "Water Bottle": 12.0
+	},
+	"quantity": 10.0
+  },
+  {
+	"name": "Apple",
+	"prices": {
+	  "$": 4.0,
+	  "Blanket": 10.0,
+	  "Bread": 6.0,
+	  "Cheese": 2.0,
+	  "Helmet": 12.0,
+	  "Map": 10.0,
+	  "Potion": 6.0,
+	  "Shield": 12.0,
+	  "Sword": 12.0,
+	  "Water Bottle": 6.0
+	},
+	"quantity": 8.0
+  },
+  {
+	"name": "Water Bottle",
+	"prices": {
+	  "$": 18.0,
+	  "Apple": 4.0,
+	  "Blanket": 6.0,
+	  "Bread": 2.0,
+	  "Cheese": 8.0,
+	  "Helmet": 10.0,
+	  "Map": 8.0,
+	  "Potion": 6.0,
+	  "Shield": 10.0,
+	  "Sword": 2.0
+	},
+	"quantity": 6.0
+  },
+  {
+	"name": "Sword",
+	"prices": {
+	  "$": 12.0,
+	  "Apple": 2.0,
+	  "Blanket": 8.0,
+	  "Bread": 10.0,
+	  "Cheese": 4.0,
+	  "Helmet": 6.0,
+	  "Map": 6.0,
+	  "Potion": 12.0,
+	  "Shield": 12.0,
+	  "Water Bottle": 10.0
+	},
+	"quantity": 10.0
+  },
+  {
+	"name": "Shield",
+	"prices": {
+	  "$": 2.0,
+	  "Apple": 6.0,
+	  "Blanket": 4.0,
+	  "Bread": 4.0,
+	  "Cheese": 6.0,
+	  "Helmet": 8.0,
+	  "Map": 8.0,
+	  "Potion": 10.0,
+	  "Sword": 6.0,
+	  "Water Bottle": 10.0
+	},
+	"quantity": 9.0
+  },
+  {
+	"name": "Bread",
+	"prices": {
+	  "$": 20.0,
+	  "Apple": 12.0,
+	  "Blanket": 4.0,
+	  "Cheese": 2.0,
+	  "Helmet": 8.0,
+	  "Map": 2.0,
+	  "Potion": 4.0,
+	  "Shield": 12.0,
+	  "Sword": 8.0,
+	  "Water Bottle": 10.0
+	},
+	"quantity": 7.0
+  },
+  {
+	"name": "Cheese",
+	"prices": {
+	  "$": 8.0,
+	  "Apple": 4.0,
+	  "Blanket": 10.0,
+	  "Bread": 10.0,
+	  "Helmet": 12.0,
+	  "Map": 8.0,
+	  "Potion": 8.0,
+	  "Shield": 2.0,
+	  "Sword": 10.0,
+	  "Water Bottle": 6.0
+	},
+	"quantity": 10.0
+  },
+  {
+	"name": "Helmet",
+	"prices": {
+	  "$": 10.0,
+	  "Apple": 4.0,
+	  "Blanket": 2.0,
+	  "Bread": 4.0,
+	  "Cheese": 8.0,
+	  "Map": 2.0,
+	  "Potion": 2.0,
+	  "Shield": 10.0,
+	  "Sword": 2.0,
+	  "Water Bottle": 10.0
+	},
+	"quantity": 13.0
+  },
+  {
+	"name": "Map",
+	"prices": {
+	  "$": 16.0,
+	  "Apple": 10.0,
+	  "Blanket": 8.0,
+	  "Bread": 12.0,
+	  "Cheese": 2.0,
+	  "Helmet": 10.0,
+	  "Potion": 12.0,
+	  "Shield": 2.0,
+	  "Sword": 2.0,
+	  "Water Bottle": 12.0
+	},
+	"quantity": 5.0
+  }
+]

@@ -20,7 +20,7 @@ var current_price_index: int = 0
 
 
 func _ready() -> void:
-	GameState.npc1_stock()
+	GameState.npc2_stock()
 	_populate_items()
 
 	# Connect signals

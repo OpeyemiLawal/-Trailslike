@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://b030rc3dyyfhf" path="res://Scripts/City/city_2.gd" id="1_dkhk4"]
 [ext_resource type="Texture2D" uid="uid://dmabswb266g3w" path="res://Asset/Town/gas_station.png" id="1_ix2cc"]
 [ext_resource type="Texture2D" uid="uid://bmnklythyq861" path="res://Asset/cursor2.png" id="2_4mg4m"]
-[ext_resource type="PackedScene" uid="uid://bwguqnhtogkq0" path="res://Scenes/Players/player_2.tscn" id="2_l6cu4"]
-[ext_resource type="PackedScene" uid="uid://c3y3l70s3qxd0" path="res://Scenes/Players/player_1.tscn" id="3_b8h5g"]
+[ext_resource type="PackedScene" uid="uid://c3y3l70s3qxd0" path="res://Scenes/NPC'S/npc1.tscn" id="3_b8h5g"]
 [ext_resource type="Texture2D" uid="uid://bihqkeo07pvo4" path="res://Asset/cursor3.png" id="3_bw45c"]
+[ext_resource type="PackedScene" uid="uid://0vus5a83p0cp" path="res://Scenes/NPC'S/npc2.tscn" id="6_cvwve"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_48o7f"]
 size = Vector2(96, 662)
@@ -39,8 +39,9 @@ texture = ExtResource("1_ix2cc")
 position = Vector2(32, 76)
 scale = Vector2(1.64, 2.4)
 
-[node name="Area2D" parent="NPCS" instance=ExtResource("2_l6cu4")]
-position = Vector2(929, 530)
+[node name="npc2" parent="NPCS" instance=ExtResource("6_cvwve")]
+position = Vector2(540, 426)
+scale = Vector2(2.24612, 1.75888)
 
 [node name="Areas" type="Node2D" parent="."]
 

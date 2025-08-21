@@ -79,7 +79,7 @@ func _generate_name_fields(amount: int) -> void:
 
 		var name_field := LineEdit.new()
 		name_field.placeholder_text = "Accompany " + str(i + 1) + " name"
-		name_field.custom_minimum_size = Vector2(150, 50)
+		name_field.custom_minimum_size = Vector2(165, 55)
 		name_field.text_changed.connect(_on_fields_changed) # important so button updates live
 
 		var age_label := Label.new()
@@ -113,12 +113,10 @@ func _on_fields_changed(_new_text: String = "") -> void:
 	# If all are valid
 	start_button.disabled = false
 
-
 func _on_job_selected(index: int) -> void:
 	var job := job_dropdown.get_item_text(index)
 	var cash: int = jobs[job]
 	cash_label.text = "Starting Cash: $" + str(cash)
-
 
 func _process(delta: float) -> void:
 	if count_dropdown.selected == 0 :
@@ -126,9 +124,25 @@ func _process(delta: float) -> void:
 
 func _on_start_pressed() -> void:
 	GameState.player_name = nameInput.text
+	GameState.start_month = monthDropdown.get_item_text(monthDropdown.selected)
 	GameState.start_year = int(yearDropdown.get_item_text(yearDropdown.selected))
 	GameState.profession = job_dropdown.get_item_text(job_dropdown.selected)
 	GameState.cash = jobs[GameState.profession]
 
+	GameState.accompanies.clear()
+	for row in name_container.get_children():
+		var entry := {}
+		for child in row.get_children():
+			if child is LineEdit:
+				entry["name"] = child.text
+			elif child is OptionButton:
+				entry["age"] = int(child.get_item_text(child.selected))
+		GameState.accompanies.append(entry)
+
+	# where a brand new game should continue after prologue
+	GameState.last_scene = "res://Scenes/City/city_1.tscn"
+	GameState.loaded_from_save = false
+	GameState.current_save_path = ""       # force a new slot
+	SaveManager.save_game()
 
 	get_tree().change_scene_to_file("res://Scenes/GUI/prologue.tscn")

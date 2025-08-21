@@ -10,7 +10,10 @@ var profession_flavor := {
 }
 
 func _on_timer_timeout() -> void:
-	get_tree().change_scene_to_file("res://Scenes/City/city_1.tscn")
+	if GameState.loaded_from_save and GameState.last_scene != "":
+		get_tree().change_scene_to_file(GameState.last_scene)
+	else:
+		get_tree().change_scene_to_file("res://Scenes/City/city_1.tscn")
 
 func _ready() -> void:
 	timer.start()
@@ -38,7 +41,6 @@ func _ready() -> void:
 
 	# Format into neat readable lines (≈ 10 words per line)
 	prologue_label.text = wrap_text_by_words(prologue_text, 10)
-
 
 func wrap_text_by_words(text: String, max_words: int = 10) -> String:
 	var words = text.split(" ")

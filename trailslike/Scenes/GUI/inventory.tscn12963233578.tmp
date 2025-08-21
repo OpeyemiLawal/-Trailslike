@@ -1,0 +1,76 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8eckwr1hhmbw"]
+
+[ext_resource type="Script" uid="uid://yem8aykvhoew" path="res://Scripts/GUI/inventory.gd" id="1_ehuqs"]
+[ext_resource type="FontFile" uid="uid://qa4nvvmd0bqq" path="res://Asset/Fonts/Oswald-Medium.ttf" id="1_wgrws"]
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ehuqs")
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.968627, 0.901961, 0.72549, 1)
+
+[node name="Bar" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 73.0
+grow_horizontal = 2
+color = Color(0.639216, 0.784314, 0.956863, 1)
+
+[node name="TradeLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -91.0
+offset_right = 91.0
+offset_bottom = 75.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_wgrws")
+theme_override_font_sizes/font_size = 50
+text = "Inventory"
+
+[node name="InventoryList" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CashLabel" type="Label" parent="InventoryList"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_wgrws")
+theme_override_font_sizes/font_size = 50
+text = "Inventory"
+
+[node name="ItemsLabel" type="Label" parent="InventoryList"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_wgrws")
+theme_override_font_sizes/font_size = 50
+text = "Inventory"
+
+[node name="ItemsList" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 249.0
+grow_horizontal = 2
+grow_vertical = 2

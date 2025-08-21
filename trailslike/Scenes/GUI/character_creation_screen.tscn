@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://canv6ew1yqw17"]
 
-[ext_resource type="Script" uid="uid://tedybo2c6of" path="res://Scripts/Scripts/character_creation_screen.gd" id="1_6vblf"]
+[ext_resource type="Script" uid="uid://tedybo2c6of" path="res://Scripts/GUI/character_creation_screen.gd" id="1_6vblf"]
 [ext_resource type="FontFile" uid="uid://b57ey3pchvkmf" path="res://Asset/Fonts/Righteous-Regular.ttf" id="1_8cwf5"]
 [ext_resource type="FontFile" uid="uid://74nfutala84w" path="res://Asset/Fonts/Oswald-Regular.ttf" id="2_l1c6r"]
 [ext_resource type="FontFile" uid="uid://bywjg8rn0lumq" path="res://Asset/Fonts/manrope-medium.otf" id="4_i5o81"]
