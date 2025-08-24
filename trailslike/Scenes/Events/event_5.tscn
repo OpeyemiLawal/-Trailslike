@@ -1,0 +1,401 @@
+[gd_scene load_steps=12 format=3 uid="uid://cuhgaf7jugldg"]
+
+[ext_resource type="Script" uid="uid://by5tbwph1neyf" path="res://Scripts/Events/event_5.gd" id="1_inv32"]
+[ext_resource type="Texture2D" uid="uid://cfuaig80f8n4x" path="res://Asset/Town/town_square.png" id="1_pq087"]
+[ext_resource type="FontFile" uid="uid://qa4nvvmd0bqq" path="res://Asset/Fonts/Oswald-Medium.ttf" id="2_inv32"]
+[ext_resource type="Texture2D" uid="uid://byce0k0qstk88" path="res://Asset/Icons/remove.png" id="3_hxj64"]
+[ext_resource type="Texture2D" uid="uid://dt4f5f3ixp1ea" path="res://Asset/Cursor/back-arrow.png" id="4_73vpp"]
+[ext_resource type="Texture2D" uid="uid://dca0rddgynlk3" path="res://Asset/People/boy.png" id="6_vroq6"]
+[ext_resource type="PackedScene" uid="uid://c6rm8cn24d4ir" path="res://Scenes/NPC'S/EventNPC/npc_1.tscn" id="7_55y0a"]
+[ext_resource type="Texture2D" uid="uid://de6m1dy7dgr7h" path="res://Asset/People/injured_man.png" id="8_xnt41"]
+[ext_resource type="PackedScene" uid="uid://bmvsmjcscyuac" path="res://Scenes/NPC'S/EventNPC/npc_2.tscn" id="9_qq2vv"]
+[ext_resource type="Texture2D" uid="uid://cxlvl3sd1cwos" path="res://Asset/People/pensive_woman.png" id="10_agl71"]
+[ext_resource type="PackedScene" uid="uid://7c3tsfob1x1k" path="res://Scenes/NPC'S/EventNPC/npc_3.tscn" id="11_ld3cs"]
+
+[node name="event5" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_inv32")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.968627, 0.901961, 0.72549, 1)
+
+[node name="MainSection" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 466.0
+offset_top = 56.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Buttons" type="Control" parent="MainSection"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 111.0
+offset_bottom = -195.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainSection/Buttons"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 6.5
+offset_bottom = 26.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Describtion" type="Button" parent="MainSection/Buttons/VBoxContainer"]
+modulate = Color(0.820235, 0.690188, 0.324389, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_inv32")
+theme_override_font_sizes/font_size = 40
+text = "Event Description"
+
+[node name="Rest" type="Button" parent="MainSection/Buttons/VBoxContainer"]
+modulate = Color(0.820235, 0.690188, 0.324389, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_inv32")
+theme_override_font_sizes/font_size = 40
+text = "Rest Here"
+
+[node name="Action" type="Button" parent="MainSection/Buttons/VBoxContainer"]
+modulate = Color(0.820235, 0.690188, 0.324389, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_inv32")
+theme_override_font_sizes/font_size = 40
+text = "Action"
+
+[node name="NPC" type="Button" parent="MainSection/Buttons/VBoxContainer"]
+modulate = Color(0.820235, 0.690188, 0.324389, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_inv32")
+theme_override_font_sizes/font_size = 40
+text = "See Who's  Around"
+
+[node name="Describtion" type="Control" parent="MainSection"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 136.0
+offset_right = -18.0
+offset_bottom = -182.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="MainSection/Describtion"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.968627, 0.901961, 0.72549, 1)
+
+[node name="DescribtionLabel" type="Label" parent="MainSection/Describtion"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -313.0
+offset_top = 54.0
+offset_right = 355.0
+offset_bottom = 243.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_inv32")
+theme_override_font_sizes/font_size = 30
+text = "Dark clouds gather and rain lashes down, 
+flooding the trail"
+
+[node name="close" type="Button" parent="MainSection/Describtion"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 50.0
+offset_bottom = 49.0
+icon = ExtResource("3_hxj64")
+flat = true
+
+[node name="ColorRect3" type="ColorRect" parent="MainSection"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -466.0
+offset_top = 11.0
+offset_right = -5.0
+offset_bottom = -97.0
+grow_vertical = 2
+color = Color(0.950171, 0.853498, 0.596036, 1)
+
+[node name="City" type="Sprite2D" parent="MainSection/ColorRect3"]
+position = Vector2(232, 271)
+scale = Vector2(0.289063, 0.515625)
+texture = ExtResource("1_pq087")
+
+[node name="Back" type="Button" parent="."]
+offset_right = 70.0
+offset_bottom = 75.0
+icon = ExtResource("4_73vpp")
+flat = true
+
+[node name="DebugLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 120.0
+offset_top = 545.0
+offset_right = 387.0
+offset_bottom = 620.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_inv32")
+theme_override_font_sizes/font_size = 50
+
+[node name="NPCSection" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Npc1" type="Control" parent="NPCSection"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="NPCImage" type="ColorRect" parent="NPCSection/Npc1"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 12.0
+offset_right = 406.0
+offset_bottom = -24.0
+grow_vertical = 2
+color = Color(0.919055, 0.798216, 0.470192, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="NPCSection/Npc1/NPCImage"]
+position = Vector2(10, 12)
+scale = Vector2(0.18457, 0.513986)
+texture = ExtResource("6_vroq6")
+centered = false
+
+[node name="NPC_no" type="Label" parent="NPCSection/Npc1"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -558.0
+offset_top = 533.0
+offset_right = -291.0
+offset_bottom = 608.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_inv32")
+theme_override_font_sizes/font_size = 50
+text = "NPC 1"
+
+[node name="EventNPC1" parent="NPCSection/Npc1" instance=ExtResource("7_55y0a")]
+visible = false
+layout_mode = 1
+offset_left = 217.0
+offset_top = -63.0
+offset_right = 217.0
+offset_bottom = -63.0
+scale = Vector2(1.08, 1.19787)
+
+[node name="Npc2" type="Control" parent="NPCSection"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="NPCImage" type="ColorRect" parent="NPCSection/Npc2"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 12.0
+offset_right = 406.0
+offset_bottom = -24.0
+grow_vertical = 2
+color = Color(0.919055, 0.798216, 0.470192, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="NPCSection/Npc2/NPCImage"]
+position = Vector2(10, 12)
+scale = Vector2(0.18457, 0.513986)
+texture = ExtResource("8_xnt41")
+centered = false
+
+[node name="NPC_no" type="Label" parent="NPCSection/Npc2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -558.0
+offset_top = 533.0
+offset_right = -291.0
+offset_bottom = 608.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_inv32")
+theme_override_font_sizes/font_size = 50
+text = "NPC 2"
+
+[node name="NPC2" parent="NPCSection/Npc2" instance=ExtResource("9_qq2vv")]
+visible = false
+layout_mode = 1
+offset_left = 242.0
+offset_top = 6.0
+offset_right = -7.0
+offset_bottom = 9.0
+
+[node name="Npc3" type="Control" parent="NPCSection"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="NPCImage" type="ColorRect" parent="NPCSection/Npc3"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 12.0
+offset_right = 406.0
+offset_bottom = -24.0
+grow_vertical = 2
+color = Color(0.919055, 0.798216, 0.470192, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="NPCSection/Npc3/NPCImage"]
+position = Vector2(10, 12)
+scale = Vector2(0.18457, 0.513986)
+texture = ExtResource("10_agl71")
+centered = false
+
+[node name="NPC_no" type="Label" parent="NPCSection/Npc3"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -558.0
+offset_top = 533.0
+offset_right = -291.0
+offset_bottom = 608.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_inv32")
+theme_override_font_sizes/font_size = 50
+text = "NPC 3"
+
+[node name="npc3" parent="NPCSection/Npc3" instance=ExtResource("11_ld3cs")]
+visible = false
+layout_mode = 1
+offset_left = 267.0
+offset_right = 267.0
+
+[node name="Buttons" type="Control" parent="NPCSection"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 460.0
+offset_top = 193.0
+offset_right = -29.0
+offset_bottom = -185.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NPCSection/Buttons"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 6.5
+offset_bottom = 26.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Talk" type="Button" parent="NPCSection/Buttons/VBoxContainer"]
+modulate = Color(0.820235, 0.690188, 0.324389, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_inv32")
+theme_override_font_sizes/font_size = 40
+text = "Talk to this person"
+
+[node name="OtherNpc" type="Button" parent="NPCSection/Buttons/VBoxContainer"]
+modulate = Color(0.820235, 0.690188, 0.324389, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_inv32")
+theme_override_font_sizes/font_size = 40
+text = "Look for someone else"
+
+[node name="Done" type="Button" parent="NPCSection/Buttons/VBoxContainer"]
+modulate = Color(0.820235, 0.690188, 0.324389, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_inv32")
+theme_override_font_sizes/font_size = 40
+text = "Done Looking Around"
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 97.0
+offset_top = 56.0
+offset_right = 369.0
+offset_bottom = 131.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_inv32")
+theme_override_font_sizes/font_size = 50
+text = "Sudden Storm"
+
+[connection signal="pressed" from="MainSection/Buttons/VBoxContainer/Describtion" to="." method="_on_describtion_pressed"]
+[connection signal="pressed" from="MainSection/Buttons/VBoxContainer/Rest" to="." method="_on_rest_pressed"]
+[connection signal="pressed" from="MainSection/Buttons/VBoxContainer/NPC" to="." method="_on_npc_pressed"]
+[connection signal="pressed" from="MainSection/Describtion/close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="NPCSection/Buttons/VBoxContainer/Talk" to="." method="_on_talk_pressed"]
+[connection signal="pressed" from="NPCSection/Buttons/VBoxContainer/OtherNpc" to="." method="_on_other_npc_pressed"]
+[connection signal="pressed" from="NPCSection/Buttons/VBoxContainer/Done" to="." method="_on_done_pressed"]

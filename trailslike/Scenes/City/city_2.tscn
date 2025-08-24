@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://bxghgkd3frxvc"]
+[gd_scene load_steps=11 format=3 uid="uid://bxghgkd3frxvc"]
 
 [ext_resource type="Script" uid="uid://b030rc3dyyfhf" path="res://Scripts/City/city_2.gd" id="1_dkhk4"]
 [ext_resource type="Texture2D" uid="uid://dmabswb266g3w" path="res://Asset/Town/gas_station.png" id="1_ix2cc"]
-[ext_resource type="Texture2D" uid="uid://bmnklythyq861" path="res://Asset/cursor2.png" id="2_4mg4m"]
-[ext_resource type="PackedScene" uid="uid://c3y3l70s3qxd0" path="res://Scenes/NPC'S/npc1.tscn" id="3_b8h5g"]
-[ext_resource type="Texture2D" uid="uid://bihqkeo07pvo4" path="res://Asset/cursor3.png" id="3_bw45c"]
-[ext_resource type="PackedScene" uid="uid://0vus5a83p0cp" path="res://Scenes/NPC'S/npc2.tscn" id="6_cvwve"]
+[ext_resource type="Texture2D" uid="uid://bmnklythyq861" path="res://Asset/Cursor/cursor2.png" id="2_4mg4m"]
+[ext_resource type="PackedScene" uid="uid://c3y3l70s3qxd0" path="res://Scenes/NPC'S/CityNPC/npc1.tscn" id="3_b8h5g"]
+[ext_resource type="Texture2D" uid="uid://bihqkeo07pvo4" path="res://Asset/Cursor/cursor3.png" id="3_bw45c"]
+[ext_resource type="PackedScene" uid="uid://0vus5a83p0cp" path="res://Scenes/NPC'S/CityNPC/npc2.tscn" id="6_cvwve"]
+[ext_resource type="PackedScene" uid="uid://b8eckwr1hhmbw" path="res://Scenes/GUI/inventory.tscn" id="7_s0yjb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_48o7f"]
 size = Vector2(96, 662)
@@ -69,6 +70,11 @@ shape = SubResource("RectangleShape2D_es1iw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Entrance2"]
 position = Vector2(926.5, 401.5)
 shape = SubResource("RectangleShape2D_1fiev")
+
+[node name="inv_ui" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Inventory" parent="inv_ui" instance=ExtResource("7_s0yjb")]
 
 [connection signal="input_event" from="Areas/ChangeCity" to="." method="_on_change_city_input_event"]
 [connection signal="mouse_entered" from="Areas/ChangeCity" to="." method="_on_change_city_mouse_entered"]

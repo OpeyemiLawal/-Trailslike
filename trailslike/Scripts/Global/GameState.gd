@@ -1,9 +1,9 @@
 extends Node
 
-signal inventory_changed  # 🔔 Emitted whenever inventory changes
+signal inventory_changed
 
 # ---------------- Player Info ----------------
-var player_name: String
+var player_name: String = ""
 var start_month: String
 var start_year: int
 var profession: String
@@ -14,9 +14,9 @@ var accompanies: Array = []
 var inventory: Dictionary = {}   # Holds $ + items
 
 # ---------------- Save Info ----------------
-var last_scene: String = ""           
-var current_save_path: String = ""     
-var loaded_from_save: bool = false     
+var last_scene: String = ""
+var current_save_path: String = ""
+var loaded_from_save: bool = false
 
 # ---------------- NPC Stocks ----------------
 var npc_stocks: Dictionary = {}  # Holds all NPC inventories
@@ -26,31 +26,21 @@ func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
 		if get_tree().current_scene:
 			GameState.last_scene = get_tree().current_scene.scene_file_path
-		
-		if GameState.current_save_path != "":
-			SaveManager.save_game()
-		else:
-			SaveManager.save_game()
-		
+		SaveManager.save_game()
 		get_tree().quit()
 
 # ---------------- Cash Management ----------------
 func change_cash(amount: int):
 	cash += amount
-	inventory["$"] = cash  # keep inventory cash in sync
+	inventory["$"] = cash
 	emit_signal("inventory_changed")
-
-	# Auto-save
-	if current_save_path != "":
-		SaveManager.save_game()
-	else:
-		SaveManager.save_game()
+	_save_if_needed()
 
 # ---------------- Initialize Player Inventory ----------------
 func init_inventory() -> void:
-	if inventory.size() == 0:  # Only initialize once
+	if inventory.size() == 0:
 		inventory["$"] = cash
-		var all_items = ["Blanket", "Potion", "Sword", "Apple", "Shield", "Water", "Herbs", "Arrow", "Boots", "Map"]
+		var all_items = ["Blanket", "Potion", "Sword", "Apple", "Shield", "Water", "Herbs", "Arrow", "Boots", "Map", "Helmet"]
 		for item in all_items:
 			inventory[item] = 0
 
@@ -69,24 +59,14 @@ func remove_item(item_name: String, qty: int) -> void:
 	emit_signal("inventory_changed")
 	_save_if_needed()
 
-# ---------------- NPC Stock ----------------
-func npc1_stock() -> void:
-	if "npc1" not in npc_stocks:
-		# Load from JSON (already created separately)
-		var file = FileAccess.open("res://Data/npc1.json", FileAccess.READ)
+# ---------------- NPC Stock Management ----------------
+func load_npc_stock(npc_id: String, path: String) -> void:
+	if not npc_stocks.has(npc_id):
+		var file = FileAccess.open(path, FileAccess.READ)
 		if file:
 			var stock_data = JSON.parse_string(file.get_as_text())
 			if typeof(stock_data) == TYPE_ARRAY:
-				npc_stocks["npc1"] = stock_data
-
-func npc2_stock() -> void:
-	if "npc1" not in npc_stocks:
-		# Load from JSON (already created separately)
-		var file = FileAccess.open("res://Data/npc2.json", FileAccess.READ)
-		if file:
-			var stock_data = JSON.parse_string(file.get_as_text())
-			if typeof(stock_data) == TYPE_ARRAY:
-				npc_stocks["npc1"] = stock_data
+				npc_stocks[npc_id] = stock_data
 
 func reduce_npc_stock(npc_id: String, item_name: String, qty: int) -> void:
 	if not npc_stocks.has(npc_id):
@@ -99,7 +79,4 @@ func reduce_npc_stock(npc_id: String, item_name: String, qty: int) -> void:
 
 # ---------------- Helpers ----------------
 func _save_if_needed() -> void:
-	if current_save_path != "":
-		SaveManager.save_game()
-	else:
-		SaveManager.save_game()
+	SaveManager.save_game()

@@ -1,15 +1,16 @@
 extends Node
 
 const SAVE_DIR := "user://saves/"
-const SAVE_FILE_NAME := "save1.save"  # Fixed main save file
 
 # ---------------- Ensure Save Directory ----------------
 func _ensure_save_dir() -> void:
 	if not DirAccess.dir_exists_absolute(SAVE_DIR):
 		DirAccess.make_dir_absolute(SAVE_DIR)
 
-func _get_save_path() -> String:
-	return SAVE_DIR + SAVE_FILE_NAME
+func _get_save_path(player_name: String) -> String:
+	# Replace spaces and sanitize filename
+	var safe_name = player_name.strip_edges().replace(" ", "_")
+	return SAVE_DIR + safe_name.to_lower() + ".save"
 
 # ---------------- Build Save Payload ----------------
 func _build_payload() -> Dictionary:
@@ -22,13 +23,13 @@ func _build_payload() -> Dictionary:
 		"accompanies": GameState.accompanies,
 		"last_scene": GameState.last_scene,
 		"npc_stocks": GameState.npc_stocks,
-		"inventory": GameState.inventory   # ✅ Keep player inventory
+		"inventory": GameState.inventory
 	}
 
 # ---------------- Save Game ----------------
 func save_game() -> void:
 	_ensure_save_dir()
-	var save_path = _get_save_path()
+	var save_path = _get_save_path(GameState.player_name)
 	GameState.current_save_path = save_path
 
 	var file = FileAccess.open(save_path, FileAccess.WRITE)
@@ -37,8 +38,8 @@ func save_game() -> void:
 		file.close()
 
 # ---------------- Load Game ----------------
-func load_game(path: String = "") -> bool:
-	var save_path = path if path != "" else _get_save_path()
+func load_game(player_name: String) -> bool:
+	var save_path = _get_save_path(player_name)
 	if not FileAccess.file_exists(save_path):
 		return false
 

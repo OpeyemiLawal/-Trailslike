@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://dr78an4pk5ceo"]
+
+[ext_resource type="Texture2D" uid="uid://d0n67wqtpuybf" path="res://Asset/Encounter/bridge_fall_1.png" id="1_onwun"]
+[ext_resource type="Script" uid="uid://d0ds8nrf7s85" path="res://Scripts/City/city_3.gd" id="1_pu1qa"]
+[ext_resource type="Texture2D" uid="uid://ckajfp5gurrmj" path="res://Asset/Cursor/exit.png" id="2_8l5ah"]
+[ext_resource type="FontFile" uid="uid://qa4nvvmd0bqq" path="res://Asset/Fonts/Oswald-Medium.ttf" id="4_weh7p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8l5ah"]
+size = Vector2(810, 246)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_weh7p"]
+size = Vector2(95, 659)
+
+[node name="City3" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_pu1qa")
+hover_cursor = ExtResource("2_8l5ah")
+
+[node name="City" type="Sprite2D" parent="."]
+position = Vector2(584.5, 322)
+scale = Vector2(0.574707, 0.488235)
+texture = ExtResource("1_onwun")
+
+[node name="DebugLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -81.0
+offset_top = -45.0
+offset_right = 81.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_weh7p")
+theme_override_font_sizes/font_size = 20
+text = "Muraraaahaga"
+
+[node name="Area" type="Node2D" parent="."]
+
+[node name="exitTown" type="Area2D" parent="Area"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area/exitTown"]
+position = Vector2(608, 219)
+shape = SubResource("RectangleShape2D_8l5ah")
+
+[node name="ChangeCity" type="Area2D" parent="Area"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area/ChangeCity"]
+position = Vector2(37.5, 319.5)
+shape = SubResource("RectangleShape2D_weh7p")
+
+[connection signal="input_event" from="Area/exitTown" to="." method="_on_exit_town_input_event"]
+[connection signal="mouse_entered" from="Area/exitTown" to="." method="_on_exit_town_mouse_entered"]
+[connection signal="mouse_exited" from="Area/exitTown" to="." method="_on_exit_town_mouse_exited"]
+[connection signal="input_event" from="Area/ChangeCity" to="." method="_on_change_city_input_event"]
+[connection signal="mouse_entered" from="Area/ChangeCity" to="." method="_on_change_city_mouse_entered"]
+[connection signal="mouse_exited" from="Area/ChangeCity" to="." method="_on_change_city_mouse_exited"]

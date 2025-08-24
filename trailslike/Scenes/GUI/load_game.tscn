@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://b57ey3pchvkmf" path="res://Asset/Fonts/Righteous-Regular.ttf" id="1_vkewh"]
 [ext_resource type="Script" uid="uid://fivw3vmy0dsj" path="res://Scripts/GUI/load_game.gd" id="1_wagk4"]
-[ext_resource type="Texture2D" uid="uid://dt4f5f3ixp1ea" path="res://Asset/back-arrow.png" id="3_wagk4"]
+[ext_resource type="Texture2D" uid="uid://dt4f5f3ixp1ea" path="res://Asset/Cursor/back-arrow.png" id="3_wagk4"]
 
 [node name="LoadGame" type="Control"]
 layout_mode = 3

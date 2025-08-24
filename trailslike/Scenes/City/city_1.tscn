@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cim0nolhiibt" path="res://Scripts/City/city_1.gd" id="1_eaioi"]
 [ext_resource type="Texture2D" uid="uid://dpmjc0om3i4ms" path="res://Asset/Town/church_ruin.png" id="1_n6k4u"]
-[ext_resource type="PackedScene" uid="uid://c3y3l70s3qxd0" path="res://Scenes/NPC'S/npc1.tscn" id="2_1msf8"]
-[ext_resource type="Texture2D" uid="uid://bmnklythyq861" path="res://Asset/cursor2.png" id="2_obv8v"]
+[ext_resource type="PackedScene" uid="uid://c3y3l70s3qxd0" path="res://Scenes/NPC'S/CityNPC/npc1.tscn" id="2_1msf8"]
+[ext_resource type="Texture2D" uid="uid://bmnklythyq861" path="res://Asset/Cursor/cursor2.png" id="2_obv8v"]
 [ext_resource type="PackedScene" uid="uid://b8eckwr1hhmbw" path="res://Scenes/GUI/inventory.tscn" id="6_wgid4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_173cm"]

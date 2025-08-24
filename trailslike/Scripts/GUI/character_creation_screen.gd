@@ -146,3 +146,7 @@ func _on_start_pressed() -> void:
 	SaveManager.save_game()
 
 	get_tree().change_scene_to_file("res://Scenes/GUI/prologue.tscn")
+
+
+func _on_back_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/GUI/menu.tscn")

@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://63hge6graxb"]
+
+[ext_resource type="Script" uid="uid://ca7t5vjgjqo5h" path="res://Scripts/cordinate.gd" id="1_jl6t6"]
+[ext_resource type="FontFile" uid="uid://qa4nvvmd0bqq" path="res://Asset/Fonts/Oswald-Medium.ttf" id="1_kiwv2"]
+
+[node name="Cordinate" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jl6t6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.724509, 0.744365, 0.765345, 1)
+
+[node name="Header" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -212.5
+offset_right = 212.5
+offset_bottom = 75.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_kiwv2")
+theme_override_font_sizes/font_size = 50
+text = "Player Cordinate"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

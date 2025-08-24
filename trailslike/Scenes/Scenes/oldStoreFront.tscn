@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dsoicvfwa4lbw"]
+[gd_scene load_steps=4 format=3 uid="uid://dsoicvfwa4lbw"]
 
 [ext_resource type="Texture2D" uid="uid://tll6ir7yg5bt" path="res://Asset/Town/old_storefront.png" id="1_aod1l"]
 [ext_resource type="Script" uid="uid://eedwc5n4cr0f" path="res://Scripts/old_store_front.gd" id="1_asf8x"]
-[ext_resource type="PackedScene" uid="uid://dii67hel2ee47" path="res://Scenes/NPC'S/npc3.tscn" id="2_eiwgl"]
-[ext_resource type="Texture2D" uid="uid://dt4f5f3ixp1ea" path="res://Asset/back-arrow.png" id="3_0k1aq"]
+[ext_resource type="Texture2D" uid="uid://dt4f5f3ixp1ea" path="res://Asset/Cursor/back-arrow.png" id="3_0k1aq"]
 
 [node name="OldStoreFront" type="Node2D"]
 script = ExtResource("1_asf8x")
@@ -19,10 +18,6 @@ grow_vertical = 2
 position = Vector2(575.5, 316.5)
 scale = Vector2(0.763672, 0.651367)
 texture = ExtResource("1_aod1l")
-
-[node name="Area2D" parent="." instance=ExtResource("2_eiwgl")]
-position = Vector2(269, 104)
-scale = Vector2(4.86083, 3.76)
 
 [node name="Back" type="Button" parent="."]
 offset_right = 40.0

@@ -24,7 +24,8 @@ func _populate_save_buttons() -> void:
 						var btn := Button.new()
 						btn.text = data["player_name"]
 						btn.custom_minimum_size = Vector2(50, 50)
-						btn.pressed.connect(_on_save_button_pressed.bind(save_path))
+						# Bind both player_name + save_path
+						btn.pressed.connect(_on_save_button_pressed.bind(data["player_name"], save_path))
 						save_list.add_child(btn)
 			filename = dir.get_next()
 		dir.list_dir_end()
@@ -34,8 +35,9 @@ func _populate_save_buttons() -> void:
 		save_list.add_child(no_saves)
 
 
-func _on_save_button_pressed(save_path: String) -> void:
-	if SaveManager.load_game(save_path):
+func _on_save_button_pressed(player_name: String, save_path: String) -> void:
+	# Load using player name (not raw path)
+	if SaveManager.load_game(player_name):
 		# Store the selected path so overwrite works later
 		GameState.current_save_path = save_path
 
