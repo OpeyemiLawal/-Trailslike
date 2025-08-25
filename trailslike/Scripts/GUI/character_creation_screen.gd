@@ -126,6 +126,7 @@ func _on_start_pressed() -> void:
 	GameState.player_name = nameInput.text
 	GameState.start_month = monthDropdown.get_item_text(monthDropdown.selected)
 	GameState.start_year = int(yearDropdown.get_item_text(yearDropdown.selected))
+	GameState.current_day = 1
 	GameState.profession = job_dropdown.get_item_text(job_dropdown.selected)
 	GameState.cash = jobs[GameState.profession]
 

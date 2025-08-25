@@ -1,0 +1,101 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2srkjlgltcgu"]
+
+[ext_resource type="FontFile" uid="uid://qa4nvvmd0bqq" path="res://Asset/Fonts/Oswald-Medium.ttf" id="1_la7k7"]
+[ext_resource type="Script" uid="uid://bpv5jc2ea5p80" path="res://Scripts/GUI/rest_ui.gd" id="1_vlxwv"]
+[ext_resource type="Texture2D" uid="uid://byce0k0qstk88" path="res://Asset/Icons/remove.png" id="2_vlxwv"]
+
+[node name="RestUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vlxwv")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_right = -9.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.936311, 0.825623, 0.528309, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -43.0
+offset_right = 43.0
+offset_bottom = 75.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_la7k7")
+theme_override_font_sizes/font_size = 50
+text = "Rest"
+
+[node name="ChooseRestDaysLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -356.5
+offset_top = 187.0
+offset_right = 14.5
+offset_bottom = 262.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_la7k7")
+theme_override_font_sizes/font_size = 25
+text = "For how many days do you want to rest"
+
+[node name="RestDaysDropdown" type="OptionButton" parent="."]
+modulate = Color(0.875398, 0.745275, 0.38489, 1)
+offset_left = 374.0
+offset_top = 190.0
+offset_right = 476.0
+offset_bottom = 232.0
+item_count = 6
+popup/item_0/text = "Choose"
+popup/item_0/id = 0
+popup/item_0/disabled = true
+popup/item_1/text = "1"
+popup/item_1/id = 0
+popup/item_2/text = "2"
+popup/item_2/id = 1
+popup/item_3/text = "3"
+popup/item_3/id = 2
+popup/item_4/text = "4"
+popup/item_4/id = 3
+popup/item_5/text = "5"
+popup/item_5/id = 4
+
+[node name="close" type="Button" parent="."]
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 50.0
+offset_bottom = 49.0
+icon = ExtResource("2_vlxwv")
+flat = true
+
+[node name="RestUIDebugLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -182.5
+offset_top = 331.0
+offset_right = 84.5
+offset_bottom = 390.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_la7k7")
+theme_override_font_sizes/font_size = 25
+
+[connection signal="item_selected" from="RestDaysDropdown" to="." method="_on_rest_days_dropdown_item_selected"]
+[connection signal="pressed" from="close" to="." method="_on_close_pressed"]

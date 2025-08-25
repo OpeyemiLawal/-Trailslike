@@ -39,4 +39,18 @@ text = "Player Cordinate"
 wait_time = 2.0
 one_shot = true
 
+[node name="CoordLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -212.5
+offset_top = 552.0
+offset_right = 212.5
+offset_bottom = 627.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_kiwv2")
+theme_override_font_sizes/font_size = 50
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

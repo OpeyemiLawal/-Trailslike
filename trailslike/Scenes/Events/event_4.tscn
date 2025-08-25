@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bhtc0yb2e4v7v"]
+[gd_scene load_steps=13 format=3 uid="uid://bhtc0yb2e4v7v"]
 
 [ext_resource type="Script" uid="uid://b4e41h613iuio" path="res://Scripts/Events/event_4.gd" id="1_0ra2v"]
 [ext_resource type="Texture2D" uid="uid://cfuaig80f8n4x" path="res://Asset/Town/town_square.png" id="1_lv62n"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bmvsmjcscyuac" path="res://Scenes/NPC'S/EventNPC/npc_2.tscn" id="9_ov85t"]
 [ext_resource type="Texture2D" uid="uid://cxlvl3sd1cwos" path="res://Asset/People/pensive_woman.png" id="10_if315"]
 [ext_resource type="PackedScene" uid="uid://7c3tsfob1x1k" path="res://Scenes/NPC'S/EventNPC/npc_3.tscn" id="11_mqlr6"]
+[ext_resource type="PackedScene" uid="uid://c2srkjlgltcgu" path="res://Scenes/GUI/rest_ui.tscn" id="12_hwuvk"]
 
 [node name="event4" type="Control"]
 layout_mode = 3
@@ -159,20 +160,6 @@ offset_right = 70.0
 offset_bottom = 75.0
 icon = ExtResource("4_y25aw")
 flat = true
-
-[node name="DebugLabel" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 120.0
-offset_top = 545.0
-offset_right = 387.0
-offset_bottom = 620.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_0ra2v")
-theme_override_font_sizes/font_size = 50
 
 [node name="NPCSection" type="Control" parent="."]
 visible = false
@@ -392,8 +379,45 @@ theme_override_fonts/font = ExtResource("2_0ra2v")
 theme_override_font_sizes/font_size = 50
 text = "Broken Wheel"
 
+[node name="SubTitle" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 190.0
+offset_top = 118.0
+offset_right = 325.0
+offset_bottom = 193.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_0ra2v")
+theme_override_font_sizes/font_size = 25
+text = "Event 4"
+
+[node name="DebugLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 68.0
+offset_top = 550.0
+offset_right = 335.0
+offset_bottom = 625.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_0ra2v")
+theme_override_font_sizes/font_size = 25
+
+[node name="RestUI" parent="." instance=ExtResource("12_hwuvk")]
+visible = false
+layout_mode = 1
+offset_left = 452.0
+offset_top = 172.0
+offset_right = 12.0
+
 [connection signal="pressed" from="MainSection/Buttons/VBoxContainer/Describtion" to="." method="_on_describtion_pressed"]
 [connection signal="pressed" from="MainSection/Buttons/VBoxContainer/Rest" to="." method="_on_rest_pressed"]
+[connection signal="pressed" from="MainSection/Buttons/VBoxContainer/Action" to="." method="_on_action_pressed"]
 [connection signal="pressed" from="MainSection/Buttons/VBoxContainer/NPC" to="." method="_on_npc_pressed"]
 [connection signal="pressed" from="MainSection/Describtion/close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

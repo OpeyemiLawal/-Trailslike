@@ -6,6 +6,7 @@ signal inventory_changed
 var player_name: String = ""
 var start_month: String
 var start_year: int
+var current_day: int = 1 
 var profession: String
 var cash: int = 0
 var accompanies: Array = []
@@ -20,6 +21,36 @@ var loaded_from_save: bool = false
 
 # ---------------- NPC Stocks ----------------
 var npc_stocks: Dictionary = {}  # Holds all NPC inventories
+
+# ---------------- Events ----------------
+var visited_events: Array = []   # Stores finished event scene paths
+
+# ---------------- Coordinates ----------------
+var position: Vector2 = Vector2.ZERO
+var last_dir: Vector2 = Vector2.ZERO
+
+
+# ---------------- Month Handling ----------------
+var months: Array[String] = [
+	"January", "February", "March", "April", "May", "June", 
+	"July", "August", "September", "October", "November", "December"
+]
+
+var days_in_month: Dictionary = {
+	"January": 31,
+	"February": 28,
+	"March": 31,
+	"April": 30,
+	"May": 31,
+	"June": 30,
+	"July": 31,
+	"August": 31,
+	"September": 30,
+	"October": 31,
+	"November": 30,
+	"December": 31
+}
+
 
 # ---------------- Notifications ----------------
 func _notification(what):
@@ -77,6 +108,27 @@ func reduce_npc_stock(npc_id: String, item_name: String, qty: int) -> void:
 			_save_if_needed()
 			break
 
+# ---------------- Calendar Helpers ----------------
+func advance_day(days: int = 1) -> void:
+	current_day += days
+	var max_days = days_in_month[start_month]
+
+	if current_day > max_days:
+		current_day = 1
+		_next_month()
+
+func _next_month() -> void:
+	var idx = months.find(start_month)
+	if idx == -1:
+		start_month = months[0] # fallback to January
+	else:
+		idx += 1
+		if idx >= months.size():
+			idx = 0
+			start_year += 1
+		start_month = months[idx]
+
+	
 # ---------------- Helpers ----------------
 func _save_if_needed() -> void:
 	SaveManager.save_game()

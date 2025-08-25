@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dfvf8jv8trboh"]
+[gd_scene load_steps=13 format=3 uid="uid://dfvf8jv8trboh"]
 
 [ext_resource type="Script" uid="uid://c7v6syamt2t7w" path="res://Scripts/Events/event_1.gd" id="1_kcw5v"]
 [ext_resource type="Texture2D" uid="uid://nnexmg3hqcbp" path="res://Asset/Encounter/car_ruin_in_fog.png" id="1_oswnm"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bmvsmjcscyuac" path="res://Scenes/NPC'S/EventNPC/npc_2.tscn" id="9_x32r0"]
 [ext_resource type="Texture2D" uid="uid://cxlvl3sd1cwos" path="res://Asset/People/pensive_woman.png" id="10_vyicx"]
 [ext_resource type="PackedScene" uid="uid://7c3tsfob1x1k" path="res://Scenes/NPC'S/EventNPC/npc_3.tscn" id="11_l2lfm"]
+[ext_resource type="PackedScene" uid="uid://c2srkjlgltcgu" path="res://Scenes/GUI/rest_ui.tscn" id="12_3cplu"]
 
 [node name="Event1" type="Control"]
 layout_mode = 3
@@ -37,20 +38,6 @@ offset_bottom = 75.0
 icon = ExtResource("3_h1yrj")
 flat = true
 
-[node name="DebugLabel" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 120.0
-offset_top = 545.0
-offset_right = 387.0
-offset_bottom = 620.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_h1yrj")
-theme_override_font_sizes/font_size = 50
-
 [node name="MainSection" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -74,7 +61,22 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_h1yrj")
 theme_override_font_sizes/font_size = 50
-text = "Lost Supply Bag"
+text = "Lost Supply Bag: "
+
+[node name="SubTitle" type="Label" parent="MainSection"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -57.0
+offset_top = 61.0
+offset_right = 78.0
+offset_bottom = 136.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_h1yrj")
+theme_override_font_sizes/font_size = 25
+text = "Event 1"
 
 [node name="Buttons" type="Control" parent="MainSection"]
 layout_mode = 1
@@ -408,9 +410,31 @@ theme_override_fonts/font = ExtResource("2_h1yrj")
 theme_override_font_sizes/font_size = 50
 text = "Lost Supply Bag"
 
+[node name="DebugLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 97.0
+offset_top = 565.0
+offset_right = 364.0
+offset_bottom = 624.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_h1yrj")
+theme_override_font_sizes/font_size = 25
+
+[node name="RestUI" parent="." instance=ExtResource("12_3cplu")]
+visible = false
+layout_mode = 1
+offset_left = 452.0
+offset_top = 172.0
+offset_right = 12.0
+
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="MainSection/Buttons/VBoxContainer/Describtion" to="." method="_on_describtion_pressed"]
 [connection signal="pressed" from="MainSection/Buttons/VBoxContainer/Rest" to="." method="_on_rest_pressed"]
+[connection signal="pressed" from="MainSection/Buttons/VBoxContainer/Action" to="." method="_on_action_pressed"]
 [connection signal="pressed" from="MainSection/Buttons/VBoxContainer/NPC" to="." method="_on_npc_pressed"]
 [connection signal="pressed" from="MainSection/Describtion/close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="NPCSection/Buttons/VBoxContainer/Talk" to="." method="_on_talk_pressed"]

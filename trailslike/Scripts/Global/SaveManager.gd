@@ -1,6 +1,7 @@
 extends Node
 
 const SAVE_DIR := "user://saves/"
+var visited_events: Array[String] = []
 
 # ---------------- Ensure Save Directory ----------------
 func _ensure_save_dir() -> void:
@@ -18,12 +19,14 @@ func _build_payload() -> Dictionary:
 		"player_name": GameState.player_name,
 		"start_month": GameState.start_month,
 		"start_year": GameState.start_year,
+		"current_day": GameState.current_day,
 		"profession": GameState.profession,
 		"cash": GameState.cash,
 		"accompanies": GameState.accompanies,
 		"last_scene": GameState.last_scene,
 		"npc_stocks": GameState.npc_stocks,
-		"inventory": GameState.inventory
+		"inventory": GameState.inventory,
+		"visited_events": GameState.visited_events
 	}
 
 # ---------------- Save Game ----------------
@@ -58,14 +61,16 @@ func load_game(player_name: String) -> bool:
 	GameState.player_name = result.get("player_name", "")
 	GameState.start_month = result.get("start_month", "January")
 	GameState.start_year = result.get("start_year", 1843)
+	GameState.current_day = result.get("current_day", 1) 
 	GameState.profession = result.get("profession", "Farmer")
 	GameState.cash = result.get("cash", 1000)
 	GameState.accompanies = result.get("accompanies", [])
 	GameState.last_scene = result.get("last_scene", "res://Scenes/City/city_1.tscn")
 	GameState.npc_stocks = result.get("npc_stocks", {})
 	GameState.inventory = result.get("inventory", {})
+	GameState.visited_events = result.get("visited_events", [])
 
-	GameState.init_inventory()  # ✅ Fill missing items with 0
+	GameState.init_inventory() 
 	GameState.current_save_path = save_path
 	GameState.loaded_from_save = true
 
